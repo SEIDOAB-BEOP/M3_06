@@ -45,15 +45,29 @@ namespace BOOPM3_06_03
     {
         static void Main(string[] args)
         {
+            /*
             Console.WriteLine("Hash codes");
-            var k = 5;
+            int k = 5;
             Console.WriteLine(k.GetHashCode());
 
+            
             var s = "hello";
             Console.WriteLine(s.GetHashCode());
 
+            s = "helLo";
+            Console.WriteLine(s.GetHashCode());
+
+
+            Car c1 = new Car { Make = CarMake.BMW, Model = "3 series", Year = 2021 };
+            Console.WriteLine(c1.GetHashCode());
+            Car c2 = new Car { Make = CarMake.BMW, Model = "3 series", Year = 2021 };
+            Console.WriteLine(c2.GetHashCode());
+
+            
             s = "heLlo";
             Console.WriteLine(s.GetHashCode());
+            */
+
 
             //Find with IEquatable interface
             Console.WriteLine("\nIEquatable");
@@ -82,8 +96,8 @@ namespace BOOPM3_06_03
             }
 
             Console.WriteLine();
-            bool found = cars.Contains(c4);
-            Console.WriteLine(found);   //false
+            bool found = cars.Contains(new Car { Make = CarMake.Volvo, Model = "V70", Year = 2020 });
+            Console.WriteLine(found);   //true
 
             //Find the old fashioned way
             Console.WriteLine("\nFind the old fashioned way"); 
@@ -109,6 +123,7 @@ namespace BOOPM3_06_03
             {
                 Console.WriteLine(item);
             }
+        
 
         }
     }
